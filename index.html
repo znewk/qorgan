@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/logo3.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QORGAN Library</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+<style>
+@font-face {
+  font-family: 'Goldman Regular';
+  src: url("/fonts/Goldman/Goldman-Regular.ttf") format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter Regular';
+  src: url("/fonts/Inter/Inter-Regular.ttf") format('truetype');
+  font-style: normal;
+}
+@font-face {
+    font-family: 'Inter Medium';
+    src: url("/fonts/Inter/Inter-Medium.ttf") format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter SemiBold';
+    src: url("/fonts/Inter/Inter-SemiBold.ttf") format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter Bold';
+    src: url("/fonts/Inter/Inter-Bold.ttf") format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Public Sans Regular';
+  src: url("/fonts/PublicSans/PublicSans-Regular.ttf") format('truetype');
+  font-style: normal;
+}
+@font-face {
+    font-family: 'Public Sans Medium';
+    src: url("/fonts/PublicSans/PublicSans-Medium.ttf") format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Public Sans Bold';
+    src: url("/fonts/PublicSans/PublicSans-Bold.ttf") format('truetype');
+    font-style: normal;
+}
+
+button:active{
+    outline: none;
+}
+button:focus, input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+input, button {
+    font-family: "Inter Regular";
+}
+body{
+    margin: 0;
+}
+body > *{
+    margin: 0;
+    font-family: "Inter Regular";
+    background-color: #F8F9FD;
+}
+.p-dropdown .p-inputtext{
+    padding: 10px;
+}
+
+.p-calendar{
+    border-radius: 10px;
+}
+.p-calendar > .p-inputtext{
+    padding: 12px;
+    font-size: 14px;
+    font-family: "Inter Regular";
+    border-radius: 10px;
+    border: 1px solid #E2E8F0;
+}
+
+.p-inputtext, .p-dropdown {
+    border-radius: 10px;
+}
+.p-multiselect {
+    border-radius: 10px;
+}
+.p-button{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #0165E1;
+
+}
+
+.p-dialog {
+    border-radius: 10px !important;
+}
+.p-dialog-header{
+    border-radius: 10px 10px 0 0 !important;
+}
+.p-dialog-content{
+    border-radius: 0 0 10px 10px !important;
+}
+/* body .p-component-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+body .p-component {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #E2E8F0;
+    border-radius: 3px;
+}
+body .p-dialog-title{
+    font-family: "Inter Medium";
+    font-size: 18px;
+} */
+
+@media screen and (max-width: 767px) {
+    
+}
+</style>
+
+</html>
