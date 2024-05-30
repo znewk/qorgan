@@ -12,7 +12,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://localhost:8082/', // Замените на URL вашего бэкенд-сервера
+        target: '/', // Замените на URL вашего бэкенд-сервера
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''), // Удалить '/api' из пути запроса
       },

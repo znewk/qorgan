@@ -20,7 +20,7 @@ function authHeader() {
 
 const instance: AxiosInstance = axios.create({
   // baseURL: 'api',
-  baseURL: 'https://localhost:8082/api',
+  baseURL: '/api',
   // withCredentials: true,
 });
 
