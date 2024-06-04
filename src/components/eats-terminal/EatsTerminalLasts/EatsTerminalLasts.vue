@@ -52,16 +52,18 @@
     const totalPages: Ref<number | null> = ref(Math.ceil(lasts.total / 3) == 0 ? 1 : Math.ceil(lasts.total / 3));
 
     const personAcceptDecline = async (last: any) => {
+        console.log("last.eatsFactPersonId: " + last.eatsFactPersonId);
         const currentDate = new Date();
         const isoDate = currentDate.toISOString();
         const data = {
+            id: last.id,
             author: "admin",
             dateCreate: isoDate,
             dateUpdate: isoDate,
             deviceId: last.deviceId || '0',
             eatGroupFactId: currentGroup?.id || '0',
             editor: "admin",
-            personId: last.id,
+            personId: last.personId,
             status: 0
         }
 
