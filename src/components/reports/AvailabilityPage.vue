@@ -43,7 +43,7 @@
                 </Column>
                 <Column field="author" :header="$t('tables.author')" sortable style="min-width: 12rem">
                     <template #body="{ data }">
-                        {{ data.author}}
+                        {{ data.authorFios}}
                     </template>
                     <template #filter="{ filterModel, filterCallback }">
                         <InputText v-model="filterModel.value" type="text" @input="filterCallback()" class="p-column-filter" :placeholder="$t('tables.author')" />
@@ -73,7 +73,7 @@
                         <InputText v-model="filterModel.value" type="text" @input="filterCallback()" class="p-column-filter" :placeholder="$t('tables.copiesCount')" />
                     </template>
                 </Column>
-                <Column field="totalCopies" :header="$t('tables.dostupCount')" sortable style="min-width: 12rem">
+                <Column field="curAvailability" :header="$t('tables.dostupCount')" sortable style="min-width: 12rem">
                     <template #body="{ data }">
                         {{ data.curAvailability }}
                     </template>
@@ -92,7 +92,7 @@
                 </Column>
 
                 
-                <Column field="publisherName" :header="$t('tables.category')" sortable style="min-width: 12rem">
+                <Column field="category" :header="$t('tables.category')" sortable style="min-width: 12rem">
                     <template #body="{ data }">
                         {{ data.category }}
                     </template>

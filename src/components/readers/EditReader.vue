@@ -8,7 +8,8 @@
             <div class="wrapper">
                 <div class="wrapperHeader">
                     <div class="readerImage">
-                        <Image src="/001.jpg" alt="Image" width="100" preview />
+                        <!-- <Image src="/001.jpg" alt="Image" width="100" preview /> -->
+                        <Image :src={pershonPhoto} alt="Image" width="100" preview />
                     </div>
                     <div class="fios">
                         <div class="item">
@@ -423,6 +424,7 @@ const filters = ref({
 //PERSON STATES
 const firstName: Ref<string> = ref('')
 const lastName: Ref<string> = ref('')
+const pershonPhoto: Ref<string> = ref('')
 const middleName: Ref<string> = ref('')
 const iin: Ref<string> = ref('')
 const personIdString:Ref<string> = ref('')
@@ -516,6 +518,7 @@ const uploadPersonById = async (id: any) => {
 
     firstName.value = person.value?.firstName!
     lastName.value = person.value?.lastName!
+    pershonPhoto.value = person.value?.photo! || ''
     middleName.value = person.value?.middleName!
     personIdString.value = person.value?.id
     iin.value = person.value?.iin!

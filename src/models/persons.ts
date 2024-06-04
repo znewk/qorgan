@@ -12,5 +12,6 @@ export interface Person {
     createDate: string,
     modifiedDate: string,
     fio: string,
-    cardIdentifier: number
+    cardIdentifier: number,
+    photo: string
 }

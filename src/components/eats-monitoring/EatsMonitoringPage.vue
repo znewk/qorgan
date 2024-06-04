@@ -21,7 +21,12 @@
                 <!-- <Column selectionMode="multiple" headerStyle="width: 3rem"></Column> -->
                 <Column header="" style="width: 1%">
                     <template #body="{ data }">
-                        <i @click="selectRow(data)" class="pi pi-chevron-down svgEditBtn" style="font-size: 1rem"></i>
+                        <i 
+                            @click="selectRow(data)" 
+                            class="pi pi-chevron-down svgEditBtn" 
+                            :style="{ transform: currentSelectedId === data.id ? 'rotate(0deg)' : 'rotate(-90deg)', fontSize: '1rem' }"
+                        ></i>
+
                         <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                             @click="selectRow(data)" class="svgEditBtn">
                             <path
@@ -167,15 +172,24 @@
     const eatsMonitoringPersDataArray: Ref<eatsMonitoringPersData[] | null> = ref(null)
     const selectedEatsMonitoringPersData: Ref<eatsMonitoringPersData[] | []> = ref([])
 
+    const currentSelectedId = ref<number | null>(null);
 
-    const selectRow = async (data: any) =>{
-        isLoadingDown.value = true
-        console.log(data.groupId)
-        await eatsGroupStore.fetchEatsMonitoringPersData(data.groupId)
-        eatsMonitoringPersDataArray.value = eatsGroupStore.getEatsMonitoringPersData!
-        console.log('eatsMonitoringPersDataArray', eatsMonitoringPersDataArray.value)
-        isLoadingDown.value = false
-    }
+    const toggleRotation = (data: any) => {
+        if (currentSelectedId.value === data.id) {
+            currentSelectedId.value = null;
+        } else {
+            currentSelectedId.value = data.id;
+        }
+    };
+
+    const selectRow = async (data: any) => {
+        isLoadingDown.value = true;
+        await eatsGroupStore.fetchEatsMonitoringPersData(data.groupId);
+        eatsMonitoringPersDataArray.value = eatsGroupStore.getEatsMonitoringPersData!;
+        isLoadingDown.value = false;
+
+        toggleRotation(data);
+    };
     const loadEatsMonitoringData = async () => {
         await eatsGroupStore.fetchEatsMonitoringData()
         // await eatsGroupStore.fetchEatsMonitoringPersData("go")
@@ -231,6 +245,7 @@
 
 .svgEditBtn {
     cursor: pointer;
+    transform: rotate(-90deg);
 }
 
 .tableBody, .groupEdit {

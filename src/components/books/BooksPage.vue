@@ -107,7 +107,7 @@
                         <InputText v-model="filterModel.value" type="text" @input="filterCallback()" class="p-column-filter" :placeholder="$t('tables.copiesCount')" />
                     </template>
                 </Column>
-                <Column field="totalCopies" :header="$t('tables.description')" sortable style="min-width: 12rem">
+                <Column field="description" :header="$t('tables.description')" sortable style="min-width: 12rem">
                     <template #body="{ data }">
                         {{ data.description }}
                     </template>

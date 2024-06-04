@@ -43,7 +43,7 @@
                 </Column>
                 <Column field="author" :header="$t('tables.author')" sortable style="min-width: 12rem">
                     <template #body="{ data }">
-                        {{ data.author}}
+                        {{ data.authorFios}}
                     </template>
                     <template #filter="{ filterModel, filterCallback }">
                         <InputText v-model="filterModel.value" type="text" @input="filterCallback()" class="p-column-filter" :placeholder="$t('tables.author')" />
@@ -134,7 +134,7 @@
                         <InputText v-model="filterModel.value" type="text" @input="filterCallback()" class="p-column-filter" :placeholder="$t('tables.bibli')" />
                     </template>
                 </Column>
-                <Column field="author" :header="$t('tables.description')" sortable style="min-width: 12rem">
+                <Column field="some" :header="$t('tables.description')" sortable style="min-width: 12rem">
                     <template #body="{ data }">
                         {{ data.some }}
                     </template>
