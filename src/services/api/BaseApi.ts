@@ -19,8 +19,8 @@ function authHeader() {
 }
 
 const instance: AxiosInstance = axios.create({
-  baseURL: 'api',
-  // baseURL: 'https://localhost:8081/api',
+  // baseURL: 'api',
+  baseURL: '/api',
   // timeout: 8000, // Timeout in milliseconds (5000ms = 5 seconds)
   // withCredentials: true,
 });
