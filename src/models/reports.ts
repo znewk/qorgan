@@ -17,5 +17,6 @@ export interface MovementReport {
     fioSt: string,
     issueDate: string,
     returnDate: string,
-    author: string
+    author: string,
+    description: string
 }
