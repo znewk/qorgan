@@ -53,31 +53,37 @@
     const currentPage: Ref<number> = ref(1);
     const totalPages: Ref<number | null> = ref(Math.ceil(list.total / 18 == 0 ? 1 : list.total / 18));
 
-        const formatedDate = (date: string) => {
-            const dateObject = new Date(date);
-            
-            // Получаем год, месяц, день
-            const year = dateObject.getFullYear();
-            const month = String(dateObject.getMonth() + 1).padStart(2, '0'); // Месяцы в диапазоне 0-11, поэтому +1
-            const day = String(dateObject.getDate()).padStart(2, '0');
+    const formatedDate = (date: string) => {
+        const dateObject = new Date(date);
 
-            // Получаем часы и минуты
-            const hours = String(dateObject.getHours()).padStart(2, '0');
-            const minutes = String(dateObject.getMinutes()).padStart(2, '0');
+        // Проверяем, является ли dateObject валидной датой
+        if (isNaN(dateObject.getTime())) {
+            return date // Возвращает date если все NaN
+        }
 
-            // Проверяем, являются ли компоненты даты валидными числами
-            if (isNaN(year) || isNaN(dateObject.getMonth()) || isNaN(dateObject.getDate())) {
-                return `${year}.${month}.${day}`;
-            }
+        // Получаем год, месяц, день
+        const year = dateObject.getFullYear();
+        const month = String(dateObject.getMonth() + 1).padStart(2, '0'); // Месяцы в диапазоне 0-11, поэтому +1
+        const day = String(dateObject.getDate()).padStart(2, '0');
 
-            // Проверяем, являются ли компоненты времени валидными числами
-            if (isNaN(dateObject.getHours()) || isNaN(dateObject.getMinutes())) {
-                return `${year}.${month}.${day}`;
-            }
+        // Получаем часы и минуты
+        const hours = String(dateObject.getHours()).padStart(2, '0');
+        const minutes = String(dateObject.getMinutes()).padStart(2, '0');
 
-            // Форматируем дату в нужный формат
-            return `${year}.${month}.${day} ${hours}:${minutes}`;
-        };
+        // Проверяем, являются ли компоненты даты валидными числами
+        if (isNaN(year) || isNaN(dateObject.getMonth()) || isNaN(dateObject.getDate())) {
+            return `${year}.${month}.${day}`;
+        }
+
+        // Проверяем, являются ли компоненты времени валидными числами
+        if (isNaN(dateObject.getHours()) || isNaN(dateObject.getMinutes())) {
+            return `${year}.${month}.${day}`;
+        }
+
+        // Форматируем дату в нужный формат
+        return `${year}.${month}.${day} ${hours}:${minutes}`;
+    };
+
 
 
     const previousPage = () => {
